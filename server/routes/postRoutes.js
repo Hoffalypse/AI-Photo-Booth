@@ -15,7 +15,15 @@ cloudinary.config({
 
 //Get all posts
 
-router.route("/").get(async (req, res) => {});
+router.route("/").get(async (req, res) => {
+  try {
+    const posts = await Post.find({});
+
+    res.status(200).json({ sucess: true, data: posts });
+  } catch (error) {
+    res.status(500).json({ sucess: false, message: error });
+  }
+});
 
 //Post new Image route
 
