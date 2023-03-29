@@ -20,7 +20,7 @@ app.get("/", async (req, res) => {
   res.send("Hello from Open AI");
 });
 
-// app.use(express.static(path.join(__dirname, '/client/dist')))
+
 
 const startServer = async () => {
   try {
