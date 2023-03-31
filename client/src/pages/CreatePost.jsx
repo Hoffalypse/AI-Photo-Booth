@@ -81,7 +81,7 @@ const CreatePost = () => {
         <h1 className="font-extrabold text-[#222328] text-[32px]">Create</h1>
         <p className="mt-2 text-[#666e75] text-[14px] max-w-[500px]">
           Generate an imaginative image through DALL-E AI and share it with the
-          community
+          community. Just enter text for any image that your mind can imagine and push generate. Don't like the image you're shown? You will get a new image every time you press the button or keep adding a more detailed description until you get just what you want.<br/><br/> Can't think of an image to create? Try our Surprise me feature for some pre-programmed suggestions.   
         </p>
       </div>
 
@@ -91,7 +91,7 @@ const CreatePost = () => {
             labelName="Your Name"
             type="text"
             name="name"
-            placeholder="Ex., john doe"
+            placeholder="Ex. john doe"
             value={form.name}
             handleChange={handleChange}
           />
