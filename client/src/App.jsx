@@ -12,12 +12,13 @@ const App = () => {
       setDark(false)
     }else setDark(true)
   }
-  console.log(dark)
+ 
   return (
     <BrowserRouter>
-      <header className="w-full flex justify-between items-center sm:px-8 py-4 border-b">
+      <header className= {dark === false ? "w-full flex justify-between items-center sm:px-8 py-4 border-b"
+      : "w-full flex justify-between items-center sm:px-8 py-4 border-b bg-blue-900"}>
         <Link to="/">
-          <img src={logo} alt="logo" className="w-52 object-contain" />
+          <img src={logo} alt="logo" className="w-52 object-contain rounded" />
         </Link>
         <div>
         <Link to="/create-post" className="font-inter font-medium bg-[#6449ff] text-white px-4 py-2 mr-2 rounded-md">Create</Link>
@@ -27,10 +28,11 @@ const App = () => {
        onClick={mode}> { dark === false ? 'Light Mode' : 'Dark Mode'}</Button>
       </div>
       </header>
-      <main className="sm:p-8 px-4 py-8 w-full bg-[#f9fafe] min-h-[calc(100vh-73px)]">
+      <main className= { dark === false ? "sm:p-8 px-4 py-8 w-full  bg-[#f9fafe] min-h-[calc(100vh-73px)]" 
+      : "sm:p-8 px-4 py-8 w-full  bg-black min-h-[calc(100vh-73px)]"}>
 
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/' element={<Home dark={dark}/>}/>
           <Route path='/create-post' element={<CreatePost/>}/>
         </Routes>
       </main>
