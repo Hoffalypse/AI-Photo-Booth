@@ -55,10 +55,10 @@ const Home = ({dark}) => {
   return (
     <section className="max-w-7xl mx-auto">
       <div>
-        <h1 className={dark ===true ? "font-extrabold text-white text-[32px]": "font-extrabold text-[#222328] text-[32px]"}>
+        <h1 className={dark ===true ? "font-extrabold text-blue-900 text-[32px]": "font-extrabold text-[#222328] text-[32px]"}>
           The Community Gallery
         </h1>
-        <p className= {dark === true ? "mt-2 text-white text-[16px] max-w-[500px]": "mt-2 text-[#66e75] text-[16px] max-w-[500px]"}>
+        <p className= {dark === true ? "mt-2 text-[#666e75] text-[18px] max-w-[500px]": "mt-2 text-[#66e75] text-[16px] max-w-[500px]"}>
           Browse through all of what our users have created. Imagery produced using AI on the DALL-E platform.
         </p>
       </div>

@@ -23,9 +23,9 @@ const App = () => {
         <div>
         <Link to="/create-post" className="font-inter font-medium bg-[#6449ff] text-white px-4 py-2 mr-2 rounded-md">Create</Link>
       
-      <Button  className= { dark === false ?  "bg-black rounded-md text-white px-4 py-[6px] font-medium" :
+      <Button  className= { dark === false ?  "bg-black rounded-md text-white px-4 py-[6px] font-medium border" :
       "bg-white rounded-md text-black px-4 py-[6px] font-medium border"}
-       onClick={mode}> { dark === false ? 'Light Mode' : 'Dark Mode'}</Button>
+       onClick={mode}> { dark === false ? 'Dark Mode' : 'Light Mode'}</Button>
       </div>
       </header>
       <main className= { dark === false ? "sm:p-8 px-4 py-8 w-full  bg-[#f9fafe] min-h-[calc(100vh-73px)]" 
@@ -33,7 +33,7 @@ const App = () => {
 
         <Routes>
           <Route path='/' element={<Home dark={dark}/>}/>
-          <Route path='/create-post' element={<CreatePost/>}/>
+          <Route path='/create-post' element={<CreatePost dark={dark}/>}/>
         </Routes>
       </main>
     </BrowserRouter>

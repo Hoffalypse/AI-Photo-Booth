@@ -4,7 +4,7 @@ import { preview } from "../assets";
 import { getRandomPrompt } from "../utils";
 import { FormField, Loader } from "../components";
 
-const CreatePost = () => {
+const CreatePost = ({dark}) => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
@@ -78,22 +78,28 @@ const CreatePost = () => {
   return (
     <section className="max-w-7xl mx-auto">
       <div>
-        <h1 className="font-extrabold text-[#222328] text-[32px]">Create</h1>
-        <p className="mt-2 text-[#666e75] text-[14px] max-w-[500px]">
+        <h1 className= {dark===false ?"font-extrabold text-[#222328] text-[32px]"
+        :"font-extrabold text-blue-900 text-[32px]"}>Create Your Image</h1>
+        <p className={dark===false ?"mt-2 text-[#666e75] text-[15px] max-w-[650px]"
+        :"mt-2 text-[#666e75] text-[15px] max-w-[650px]"}
+        >
           Generate an imaginative image through DALL-E AI and share it with the
           community. Just enter text for any image that your mind can imagine and push generate. Don't like the image you're shown? You will get a new image every time you press the button or keep adding a more detailed description until you get just what you want.<br/><br/> Can't think of an image to create? Try our Surprise me feature for some pre-programmed suggestions.   
         </p>
       </div>
 
-      <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-5">
+      <form className="mt-16 max-w-3xl " onSubmit={handleSubmit}>
+        <div className="flex flex-col gap-5 text-blue-900">
+          <p className= {dark===false?"mb-[-20px] font-semibold": "mb-[-20px] text-[#666e75] font-semibold"}>Your Name</p>
           <FormField
-            labelName="Your Name"
+           
+
             type="text"
             name="name"
             placeholder="Ex. john doe"
             value={form.name}
             handleChange={handleChange}
+            className={"text-blue-900"}
           />
 
           <FormField
@@ -105,9 +111,11 @@ const CreatePost = () => {
             handleChange={handleChange}
             isSurpriseMe
             handleSurpriseMe={handleSurpriseMe}
-          />
+           dark={dark}
+            
+          /> 
 
-          <div className="relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center">
+          <div className="relative bg-gray-100 border border-gray-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center">
             {form.photo ? (
               <img
                 src={form.photo}
@@ -118,12 +126,12 @@ const CreatePost = () => {
               <img
                 src={preview}
                 alt="preview"
-                className="w-9/12 h-9/12 object-contain opacity-40"
+                className="w-9/12 h-9/12 object-contain  "
               />
             )}
 
             {generatingImg && (
-              <div className="absolute inset-0 z-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] rounded-lg">
+              <div className="absolute inset-0 z-0 flex justify-center items-center  rounded-lg">
                 <Loader />
               </div>
             )}
