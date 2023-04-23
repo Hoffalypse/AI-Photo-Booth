@@ -7,12 +7,14 @@ const RenderCards = ({ data, title }) => {
   }
 };
 
-const Home = ({dark}) => {
+const Home = ({dark, setShowBtn}) => {
   const [loading, setLoading] = useState(false);
   const [allPosts, setAllPosts] = useState(null);
   const [searchText, setSearchText] = useState("");
   const [searchedResults, setSearchedResults] = useState(null);
   const [searchTimeout, setSearchTimeout] = useState(null);
+
+  setShowBtn(true)
 
   useEffect(() => {
     const fetchPosts = async () => {
