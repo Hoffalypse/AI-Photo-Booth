@@ -116,7 +116,7 @@ const CreatePost = ({dark, setShowBtn}) => {
             
           /> 
 
-          <div className="relative bg-gray-100 border border-gray-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center">
+          <div className="relative  bg-gray-100 border border-gray-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center">
             {form.photo ? (
               <img
                 src={form.photo}
@@ -127,7 +127,7 @@ const CreatePost = ({dark, setShowBtn}) => {
               <img
                 src={preview}
                 alt="preview"
-                className="w-9/12 h-9/12 object-contain  "
+                className="w-9/12 h-9/12 object-contain"
               />
             )}
 
