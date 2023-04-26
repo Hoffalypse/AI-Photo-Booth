@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import { logo } from "./assets";
+import { otto } from "./assets";
 import { Home, CreatePost } from "./pages";
 import { Button } from "react-bootstrap";
 
@@ -19,7 +19,7 @@ const App = () => {
       <header className= {dark === false ? "w-full flex justify-between items-center sm:px-8 py-4 border-b"
       : "w-full flex justify-between items-center sm:px-8 py-4 border-b bg-blue-900"}>
         <Link to="/">
-          <img src={logo} alt="logo" className="w-52 object-contain rounded" />
+          <img src={otto} alt="logo" className="w-52 object-contain rounded" />
         </Link>
         <div>
          {showBtn=== false? <Link to="/" className="font-inter font-medium bg-[#6449ff] text-white px-4 py-2 mr-2 rounded-md">Community</Link> : 
@@ -34,6 +34,7 @@ const App = () => {
       : "sm:p-8 px-4 py-8 w-full  bg-black min-h-[calc(100vh-73px)]"}>
 
         <Routes>
+    
           <Route path='/' element={<Home dark={dark} setShowBtn={setShowBtn}/>}/>
           <Route path='/create-post' element={<CreatePost dark={dark} setShowBtn={setShowBtn}/>}/>
         </Routes>
